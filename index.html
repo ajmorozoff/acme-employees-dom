@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel='stylesheet' href='styles.css'>
+    </head>
+
+    <body>
+        <div id='header'>Acme Employees DOM</div>
+        <div>Choose yourthree favorite employees.</div>
+        <div id='tile-container'></div>
+        <div id='legend'></div>
+    </body>
+
+    <script>
+    
+    const employees = [
+    { id: 1, name: 'moe'},
+    { id: 2, name: 'larry'},
+    { id: 4, name: 'shep'},
+    { id: 3, name: 'curly'},
+    { id: 5, name: 'groucho'},
+    { id: 6, name: 'harpo'},
+    { id: 8, name: 'shep Jr.'},
+    { id: 99, name: 'lucy'}
+  ];
+
+  const tileContainer = document.getElementById('tile-container');
+
+  const tileMaker = () => {
+      employees.forEach(obj => {
+          const tile = document.createElement('div');
+          tile.classList.add('tile');
+          tile.innerHTML = obj.name;
+          tileContainer.append(tile);
+      })
+  }
+
+  tileMaker();
+    </script>
+</html>

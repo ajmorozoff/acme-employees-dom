@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+#tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    height: 400px;
+}
+
+.tile {
+    width: 30%;
+    height: 100px;
+    background-color: skyblue;
+    font-size: 1rem;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
