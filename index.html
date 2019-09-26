@@ -12,6 +12,8 @@
 
     <script>
     
+    let favorites = [];
+
     const employees = [
     { id: 1, name: 'moe'},
     { id: 2, name: 'larry'},
@@ -29,11 +31,36 @@
       employees.forEach(obj => {
           const tile = document.createElement('div');
           tile.classList.add('tile');
+          tile.id = obj.id;
           tile.innerHTML = obj.name;
           tileContainer.append(tile);
+
+        tile.addEventListener('click', () => {
+
+            if (favorites.includes(tile.id)) {
+                favorites.splice(favorites.indexOf(tile.id), 1);
+                tile.style['background-color'] = 'skyblue';
+                localStorage.value = favorites;
+                return;
+            }
+            if (favorites.length >= 3) {
+                alert('there is a max of 3 favorites, sorry');
+                return;
+            }
+            
+            favorites.push(tile.id);
+            localStorage.value = favorites;
+            tile.style['background-color'] = 'yellow';
+
+            
+            
+        })
+
       })
   }
 
   tileMaker();
+
+
     </script>
 </html>
